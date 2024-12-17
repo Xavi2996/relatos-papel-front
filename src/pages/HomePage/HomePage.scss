@@ -11,3 +11,10 @@
 .BackcolorPrimary {
     background-color: #cf615d !important;
 }
+
+.container-ver-todos{
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
+}

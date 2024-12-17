@@ -17,7 +17,7 @@ const Navbar = () => {
         </div>
         <div>
           <ul className="m-0">
-            <li className="list-style" onClick={() => navigate('/profile')}>
+            <li className="list-style" onClick={() => navigate('/login')}>
               <FontAwesomeIcon icon={faUser} size="2x" color="black" />
               <span className="navbar-text">Ingresar</span>
                
