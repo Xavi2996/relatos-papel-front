@@ -15,15 +15,47 @@
 .list-style{
     list-style: none;
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
     span{
         font-size: 1.5rem;
         margin-left: 0.5rem;
     }
     &:hover{
         cursor: pointer;
-        color: #212529 !important;
-        background-color: #e2e6ea !important;
-        border-color: #dae0e5 !important;
+        color: #212529;
+        background-color: #e2e6ea;
+        border-color: #dae0e5;
     }
+}
+
+.list-style-navbar{
+    list-style: none;
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 1rem;
+    //border-radius: 10px;
+
+    &:hover{
+        cursor: pointer;
+        color: white;
+        background-color: #cf615d;
+        border-color: #cf615d;
+    }
+}
+
+.container-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #dee2e6;
+    margin-top: 1rem;
+}
+
+.h-line {
+    bottom: -2px;
+    height: 5px;
+    position: absolute;
+    width: 250px;
 }
