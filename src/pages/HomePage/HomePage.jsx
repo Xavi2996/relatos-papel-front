@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomePage.scss';
 import CarouselBanner from '../../components/CarouselBanner/CarouselBanner';
+import CarouselLibros from '../../components/CarouselLibros/CarouselLibros';
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
@@ -19,6 +20,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+            <CarouselLibros />
         </div>
     );
 };
