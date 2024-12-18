@@ -2,17 +2,21 @@ import {React} from 'react';
 import './CarouselLibros.scss';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {books, novedades, recomendados} from '../../mocks/books'
 import CardBook from '../CardBook/CardBook';
 
 const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 4
+    },
+    desktop_small: {
+      breakpoint: { max: 1024, min: 768 },
       items: 3,
       slidesToSlide: 3
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 768, min: 464 },
       items: 2,
       slidesToSlide: 2
     },
@@ -22,12 +26,11 @@ const responsive = {
       slidesToSlide: 1
     }
   };
-const CarouselLibros = () => {
+const CarouselLibros = ({data}) => {
     return (
         <div style={{ padding: "20px" }}>
-          <h2>React Multi Carousel</h2>
           <Carousel responsive={responsive} infinite={true} autoPlay={true}>
-            {novedades.map((book) => (
+            {data.map((book) => (
               <div key={book.id}>
                 <CardBook book={book} />
               </div>

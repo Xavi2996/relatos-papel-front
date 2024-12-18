@@ -1,0 +1,42 @@
+.card-book{
+    background-color: #F2F2F0;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    &:hover{
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+.card-book__container{
+    cursor: pointer;
+}
+
+
+
+.card-book__info{
+    max-height: 50px;
+    min-height: 50px;
+}
+.card-book__img{
+    width: 100;
+    height: 220px;
+    margin-bottom: 1rem;
+}
+
+.linea-horizontal {
+    width: 100%;
+    border-top: 1px solid black;
+    margin: 10px auto;
+}
+
+.btn-icon{
+    border: none;
+    padding: 0.5rem;
+    margin: 0 0.2rem;
+    &:hover{
+        opacity: 0.8;
+    }
+}
