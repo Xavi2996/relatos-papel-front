@@ -37,4 +37,4 @@ const recomendados = [
     { id: 15, title: "La Metamorfosis", author: "Franz Kafka", price: '75', novedad: false, recomendado: true, stock: 10, image: "assets/images/books/metamorfosis.jpg" }
 ];
   
-  export default { books, novedades, recomendados };
+  export { books, novedades, recomendados };
