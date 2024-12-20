@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import CartPage from "./pages/CartPage/CartPage";
 import Favoritos from "./pages/Favoritos/Favoritos";
 import Login from "./pages/Login/Login";
+import Biblioteca from "./pages/Biblioteca/Biblioteca";
 import Working from "./components/Working/Working";
 // import BookPage from "./pages/BookPage/BookPage";
 // import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/favoritos" element={<Favoritos />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/working" element={<Working />} />
+                <Route path="/biblioteca" element={<Biblioteca />} />
                 {/* <Route path="/book/:id" element={<BookPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} /> */}
               </Routes>

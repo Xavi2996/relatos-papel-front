@@ -25,7 +25,7 @@ const HomePage = () => {
             <div className="novedades-container mt-4">
                 <div className='container novedades-container__display'>
                     <div>
-                        <h3 className='novedades-title'> Novedades</h3>
+                        <h3 className='novedades-title'> Recomendados</h3>
                         <div className="h-line BackcolorPrimary"></div>
                     </div>
                     <div onClick={() => navigate('/working')} className='container-ver-todos'>

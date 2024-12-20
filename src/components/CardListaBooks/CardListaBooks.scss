@@ -1,0 +1,31 @@
+.info-book-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.img-info{
+    width: 150px;
+    height: 220px;
+}
+
+.card-lista-book{
+    padding-bottom: 0px;
+    background: #f2f2f2;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    width: 45%;
+}
+
+@media (max-width: 991px){
+    .card-lista-book{
+        width: 70%;
+    }
+}
+
+@media (max-width: 560px){
+    .card-lista-book{
+        width: 95%;
+    }
+}
