@@ -5,7 +5,7 @@ import './Footer.scss'; // Asegúrate de ajustar la ruta según tu estructura de
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer mt-5">
       <div className="footer__content">
         <div className="footer__section">
           <h4>Sobre Nosotros</h4>
