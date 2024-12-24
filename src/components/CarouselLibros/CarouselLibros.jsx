@@ -29,7 +29,7 @@ const responsive = {
 const CarouselLibros = ({data}) => {
     return (
         <div style={{ padding: "20px" }}>
-          <Carousel responsive={responsive} infinite={true} autoPlay={true}>
+          <Carousel responsive={responsive} infinite={true} autoPlay={false}>
             {data.map((book) => (
               <div key={book.id}>
                 <CardBook book={book} />

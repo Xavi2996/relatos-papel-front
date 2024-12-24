@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../../utilities/AppContext';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { favorites, cart } = useContext(AppContext);
+  console.log(favorites, cart);
 
   return (
     <>
@@ -23,10 +26,16 @@ const Navbar = () => {
                
             </li>
             <li className="list-style" onClick={() => navigate('/favoritos')}>
-              <FontAwesomeIcon icon={faHeart} size="2x" color="black" />
+              <div className="icon-container">
+                <FontAwesomeIcon icon={faHeart} size="2x" color="black" />
+                  <div className="icon-badge">{favorites.length}</div>
+              </div>
             </li>
             <li className="list-style" onClick={() => navigate('/cart')}>
-              <FontAwesomeIcon icon={faShoppingCart} size="2x" color="black" />
+              <div className="icon-container">
+                <FontAwesomeIcon icon={faShoppingCart} size="2x" color="black" />
+                  <div className="icon-badge">{cart.length}</div>
+              </div>
             </li>
           </ul>
         </div>

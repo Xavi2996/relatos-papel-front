@@ -1,9 +1,10 @@
-import {React} from 'react';
+import React from 'react';
 import './Biblioteca.scss';
 import {books} from '../../mocks/books';
 import CardListaBooks from '../../components/CardListaBooks/CardListaBooks';
 
 const Biblioteca = () => {
+
     return (
         <div>
             <div className="container">
@@ -19,8 +20,6 @@ const Biblioteca = () => {
             </div>
         </div>
     );
-
-
 }
 
 export default Biblioteca;

@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./CardBook.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import { AppContext } from "../../utilities/AppContext";
 
 const CardBook = ({ book }) => {
-    const addFavorites = () => {
-        console.log('Añadir a favoritos', book);
-    }
-    const addCart = () => {
-        console.log('Añadir al carrito', book);
-    }
+  const {favorites, toggleFavorite, addCart } = useContext(AppContext);
+  const isFavorite = favorites.some(fav => fav.id === book.id);
+
+
   return (
     <div className="card-book">
         <div className="card-book__container">
@@ -24,14 +23,14 @@ const CardBook = ({ book }) => {
             </div>
         </div>
       <div className="linea-horizontal"></div>
-      <div>
-        <button className="btn-icon" onClick={addFavorites}>
-         <FontAwesomeIcon icon={faHeart} size="2x" color="#f08065"/>
-        </button>
-        <button className="btn-icon" onClick={addCart}>
-         <FontAwesomeIcon icon={faShoppingCart} size="2x" color="#f08065"/>
-        </button>
-      </div>
+    <div>
+      <button className="btn-icon" onClick={() => toggleFavorite(book)}>
+        <FontAwesomeIcon icon={faHeart} size="2x" color={isFavorite ? "#ff0000" : "#f08065"} />
+      </button>
+      <button className="btn-icon" onClick={() => addCart(book)}>
+        <FontAwesomeIcon icon={faShoppingCart} size="2x" color="#f08065" />
+      </button>
+    </div>
     </div>
   );
 }

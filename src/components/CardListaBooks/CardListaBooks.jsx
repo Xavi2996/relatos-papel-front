@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './CardListaBooks.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
+import { AppContext } from "../../utilities/AppContext";
 const CardListaBooks = ({ book }) => {
+  const {favorites, toggleFavorite, addCart } = useContext(AppContext);
+  const isFavorite = favorites.some(fav => fav.id === book.id);
   return (
     <div className='card-lista-book'>
         <div className="info-book-container">
@@ -20,11 +23,11 @@ const CardListaBooks = ({ book }) => {
         </div>
         <div className="linea-horizontal"></div>
         <div className='text-center'>
-          <button className="btn-icon">
-            <FontAwesomeIcon icon={faHeart} size="2x" color="#f08065"/>
+          <button className="btn-icon" onClick={() => toggleFavorite(book)}>
+            <FontAwesomeIcon icon={faHeart} size="2x" color={isFavorite ? "#ff0000" : "#f08065"} />
           </button>
-          <button className="btn-icon">
-            <FontAwesomeIcon icon={faShoppingCart} size="2x" color="#f08065"/>
+          <button className="btn-icon" onClick={() => addCart(book)}>
+            <FontAwesomeIcon icon={faShoppingCart} size="2x" color="#f08065" />
           </button>
         </div>
     </div>
