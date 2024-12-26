@@ -4,3 +4,21 @@
     justify-content: center;
     gap: 2rem;
 }
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+.search-input:focus {
+    border-color: #f08065;
+    outline: none;
+    box-shadow: 0 0 5px rgba(240, 128, 101, 0.5); /* Sombra con el color del borde */
+  }
+  

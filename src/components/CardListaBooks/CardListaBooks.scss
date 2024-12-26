@@ -4,6 +4,10 @@
     align-items: center;
     padding: 1rem;
     gap: 1rem;
+    cursor: pointer;
+    &:hover{
+        background: #f2f2f2;
+    }
 }
 
 .img-info{

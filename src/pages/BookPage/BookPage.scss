@@ -1,0 +1,65 @@
+/* filepath: /c:/Users/xavie/OneDrive/Documents/UNIR/Máster Ingeniería de Software/Desarrollo web fullstack/Actividades/Actividad1/relatos-de-papel/src/pages/BookPage/BookPage.scss */
+.book-page {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    font-family: Arial, sans-serif;
+  }
+  
+  .book-page h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .book-page img {
+    height: 300px;
+    display: block;
+    margin: 20px 0;
+  }
+  
+  .book-page p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  .book-page p strong {
+    font-weight: bold;
+  }
+  
+  .book-page .book-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .book-page .book-details p {
+    margin: 0;
+  }
+  
+  .book-page .book-price {
+    font-size: 1.5em;
+    color: #f08065;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .add-to-cart{
+    background-color: #cf615d;
+    border:#cf615d;
+    color: white;
+  }
+
+  .add-favorites{
+    background-color: white;
+    border: solid 1px #343a40;
+    &:hover{
+      background-color: #343a40;
+      color: white;
+    }
+  }

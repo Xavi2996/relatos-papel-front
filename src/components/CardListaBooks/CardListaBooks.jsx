@@ -3,12 +3,15 @@ import './CardListaBooks.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from "../../utilities/AppContext";
+import { useNavigate } from 'react-router-dom';
 const CardListaBooks = ({ book }) => {
   const {favorites, toggleFavorite, addCart } = useContext(AppContext);
   const isFavorite = favorites.some(fav => fav.id === book.id);
+  const navigate = useNavigate();
+  
   return (
     <div className='card-lista-book'>
-        <div className="info-book-container">
+        <div className="info-book-container" onClick={() => navigate('/book/' + book.id)} >
             <div className="info-book-container__img">
                 <img src={book.image} alt={book.title} className="img-info" />
             </div>
