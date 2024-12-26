@@ -1,57 +1,49 @@
-import React, { useContext } from 'react';
-import './CartPage.scss';
-import { AppContext } from "../../utilities/AppContext";
+import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { AppContext } from "../../utilities/AppContext";
+import Modal from '../../components/Modal/Modal';
+import './CartPage.scss';
 
 const CartPage = () => {
-  const { cart, updateCartQuantity, removeFromCart } = useContext(AppContext);
+  const { cart, removeFromCart, updateQuantity } = useContext(AppContext);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
 
-  const calculateSubtotal = (price, quantity) => price * quantity;
-
-  const groupedCart = cart.reduce((acc, book) => {
-    const existingBook = acc.find(item => item.id === book.id);
-    if (existingBook) {
-      existingBook.quantity += book.quantity || 1;
-    } else {
-      acc.push({ ...book, quantity: book.quantity || 1 });
-    }
-    return acc;
-  }, []);
-
-  const total = groupedCart.reduce((acc, book) => acc + calculateSubtotal(book.price, book.quantity), 0);
-
-  const handleQuantityChange = (bookId, quantity) => {
-    updateCartQuantity(bookId, quantity);
+  const handleRemove = (id) => {
+    removeFromCart(id);
   };
 
-  const handleRemove = (bookId) => {
-    removeFromCart(bookId);
+  const handleQuantityChange = (id, quantity) => {
+    updateQuantity(id, quantity);
   };
+
+  const calculateSubtotal = (price, quantity) => {
+    return (price * quantity).toFixed(2);
+  };
+
+  const handleConfirmPurchase = () => {
+    setConfirmModalOpen(true);
+  };
+
+  const handlePurchase = () => {
+    cart.length = 0;
+    setConfirmModalOpen(false);
+    setModalOpen(true);
+  };
+
+  const total = cart.reduce((acc, book) => acc + book.price * book.quantity, 0);
 
   return (
     <div className="cart-page">
-      <div>
-        <div className="cart-header">
-          <p>ARTÍCULO</p>
-          <p>CANTIDAD</p>
-          <p>PRECIO</p>
-          <p>SUBTOTAL</p>
-        </div>
-        {groupedCart.length === 0 ? (
-          <div className="empty-cart-message">
-            <p>Aún no se han agregado productos al carrito.</p>
-          </div>
+      <h1>Carrito de Compras</h1>
+      <div className="cart-items">
+        {cart.length === 0 ? (
+          <p>No hay libros en el carrito.</p>
         ) : (
-          groupedCart.map((book, index) => (
-            <div className="cart-item" key={index}>
-              <div className='d-flex align-items-center'>
-                <img src={book.image} alt={book.title} className='img-cart m-0'/>
-                <div>
-                  <h5 className='text-center mt-1'>{book.title}</h5>
-                  <h6 className='text-center'>{book.author}</h6>
-                </div>
-              </div>
+          cart.map((book) => (
+            <div key={book.id} className="cart-item">
+              <p>{book.title}</p>
               <input
                 type="number"
                 value={book.quantity}
@@ -66,14 +58,31 @@ const CartPage = () => {
             </div>
           ))
         )}
-        {groupedCart.length > 0 && (
+        {cart.length > 0 && (
           <div className="cart-total">
             <p>Total: ${total.toFixed(2)}</p>
+            <button className="btn-confirm" onClick={handleConfirmPurchase}>Confirmar compra</button>
           </div>
         )}
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Compra Confirmada"
+      >
+        <p>¡Gracias por tu compra!</p>
+      </Modal>
+      <Modal
+        isOpen={isConfirmModalOpen}
+        onClose={() => setConfirmModalOpen(false)}
+        title="Confirmar Compra"
+      >
+        <p>¿Estás seguro de que deseas confirmar la compra?</p>
+        <button className="btn-confirm" onClick={handlePurchase}>Sí, confirmar</button>
+        <button className="btn-cancel" onClick={() => setConfirmModalOpen(false)}>Cancelar</button>
+      </Modal>
     </div>
   );
-}
+};
 
 export default CartPage;
