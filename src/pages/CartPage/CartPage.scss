@@ -1,0 +1,85 @@
+/* filepath: /c:/Users/xavie/OneDrive/Documents/UNIR/Máster Ingeniería de Software/Desarrollo web fullstack/Actividades/Actividad1/relatos-de-papel/src/pages/CartPage/CartPage.scss */
+.cart-page {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .cart-header, .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cart-header p {
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cart-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .cart-item div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart-item p {
+    margin: 0;
+    padding: 5px 0;
+  }
+  
+  .cart-item input[type="number"] {
+    width: 50px;
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .cart-total {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .img-cart {
+    width: 80px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .align-items-center {
+    align-items: center;
+  }
+  
+  .btn-trash {
+    background: none;
+    font-size: 1.5rem;
+    border: none;
+    color: red;
+    cursor: pointer;
+    &:hover {
+      color: darkred;
+    }
+  }
+  
+  .empty-cart-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #555;
+  }
