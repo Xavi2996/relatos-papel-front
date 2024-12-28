@@ -1,8 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import './Favoritos.scss';
-import { books } from '../../mocks/books';
 import CardListaBooks from '../../components/CardListaBooks/CardListaBooks';
-import useSearch from '../../hooks/search';
 import { AppContext } from "../../utilities/AppContext";
 
 

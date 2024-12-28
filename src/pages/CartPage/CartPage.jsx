@@ -7,8 +7,7 @@ import Modal from '../../components/Modal/Modal';
 import './CartPage.scss';
 
 const CartPage = () => {
-  const { cart, removeFromCart, updateQuantity } = useContext(AppContext);
-  const [isModalOpen, setModalOpen] = useState(false);
+  const { cart, removeFromCart, updateCartQuantity } = useContext(AppContext);
   const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
   const [isNavigateModal, setIsNavigateModal] = useState(false);
 
@@ -19,7 +18,7 @@ const CartPage = () => {
   };
 
   const handleQuantityChange = (id, quantity) => {
-    updateQuantity(id, quantity);
+    updateCartQuantity(id, quantity);
   };
 
   const calculateSubtotal = (price, quantity) => {
