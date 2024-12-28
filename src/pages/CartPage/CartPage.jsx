@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from "../../utilities/AppContext";
+import { useNavigate } from 'react-router-dom';
 import Modal from '../../components/Modal/Modal';
 import './CartPage.scss';
 
@@ -9,6 +10,9 @@ const CartPage = () => {
   const { cart, removeFromCart, updateQuantity } = useContext(AppContext);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isConfirmModalOpen, setConfirmModalOpen] = useState(false);
+  const [isNavigateModal, setIsNavigateModal] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleRemove = (id) => {
     removeFromCart(id);
@@ -29,7 +33,7 @@ const CartPage = () => {
   const handlePurchase = () => {
     cart.length = 0;
     setConfirmModalOpen(false);
-    setModalOpen(true);
+    setIsNavigateModal(true);
   };
 
   const total = cart.reduce((acc, book) => acc + book.price * book.quantity, 0);
@@ -66,11 +70,12 @@ const CartPage = () => {
         )}
       </div>
       <Modal
-        isOpen={isModalOpen}
-        onClose={() => setModalOpen(false)}
+        isOpen={isNavigateModal}
+        onClose={() => setIsNavigateModal(false)}
         title="Compra Confirmada"
       >
         <p>¡Gracias por tu compra!</p>
+        <button className="btn-confirm" onClick={() => navigate('/home')}>Seguir Comprando</button>
       </Modal>
       <Modal
         isOpen={isConfirmModalOpen}

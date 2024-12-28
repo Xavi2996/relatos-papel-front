@@ -22,11 +22,12 @@
 .btn-confirm {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 9px;
   cursor: pointer;
-  margin-right: 10px;
+  margin: 10px auto;
+  width: 50%;
 }
 
 .btn-confirm:hover {
@@ -36,10 +37,12 @@
 .btn-cancel {
   background-color: #f44336;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 9px;
   cursor: pointer;
+  margin: 10px auto;
+  width: 50%;
 }
 
 .btn-cancel:hover {

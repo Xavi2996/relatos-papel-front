@@ -45,8 +45,8 @@ const Navbar = () => {
         <ul className='m-0 p-0'>
             <li className="list-style-navbar" onClick={() => navigate('/home')}><span>Home</span></li>
             <li className="list-style-navbar" onClick={() => navigate('/biblioteca')}><span>Biblioteca</span></li>
-            <li className="list-style-navbar" onClick={() => navigate('/recomendados')}><span>Recomendados</span></li>
-            <li className="list-style-navbar" onClick={() => navigate('/noticias')}><span>Noticias</span></li>
+            <li className="list-style-navbar" onClick={() => navigate('/working')}><span>Recomendados</span></li>
+            <li className="list-style-navbar" onClick={() => navigate('/working')}><span>Noticias</span></li>
         </ul>
         </nav>
       </div>
